@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Chart.js demo</title>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.bundle.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.bundle.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>
+    </head>
+<body>
+<canvas id="myChart" width="10" height="10"></canvas>
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: ["Merged", "Non-Merged"],
+    datasets: [{
+      backgroundColor: [
+        "#e74c3c",
+        "#34495e"
+      ],
+      data: [14, 11]
+    }]
+  }
+});
+</script>
+</body>
+</html>
