@@ -118,7 +118,10 @@ def parse_results(x):
 
 commit_data = parse_results(user_langs())
 
-print("DEBUG: commit_data ouput: ", commit_data)
+for k, v in commit_data.items():
+	print(k[0], k[1], v)
+
+#print("DEBUG: commit_data ouput: ", commit_data)
 uniq_fts = {}
 
 # Returns the count of commits by file type, regardless of user
@@ -132,5 +135,5 @@ for tup, c in commit_data.items():
 	else:
 		uniq_fts[ft] += 1
 
-print(uniq_fts)
+#print(uniq_fts)
 

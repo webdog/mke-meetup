@@ -13,6 +13,8 @@ from textblob import TextBlob
 ghe = False
 user = input("Please enter your username\n>")
 token = getpass("please enter your P.A.T. for authentication\n>")
+reqs_max = 5000
+org_search = False
 
 if ghe:
 	login = Login(user, token)
@@ -28,10 +30,14 @@ def get_org():
 	return org
 
 def get_repos():
-	for orgs in get_org():
-		#Specify one repository at a time. You'll need to query the API to get the ID of the repoistory
-		repos = [repos for repos in orgs.iter_repos() if repos.id == 24772020]
-	return repos
+	if org_search:
+		for orgs in get_org():
+			#Specify one repository at a time. You'll need to query the API to get the ID of the repoistory
+			repos = [repos for repos in orgs.iter_repos() if repos.id == 24772020]
+		return repos
+	else: 
+		repo = [r.refresh() for r in gh.iter_user_repos(user) if r.id = 68479364]
+		return repo
 
 def get_prs():
 	pulls = []
