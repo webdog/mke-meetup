@@ -1,5 +1,5 @@
 #!/bin/bash
-PAT=bc2661a8d0c6006265253c1b2222722e5c257a0b
+PAT=  
 USER=webdog
 
 
